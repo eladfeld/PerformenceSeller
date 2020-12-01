@@ -4,14 +4,27 @@ import Interfaces.ISeller;
 
 import java.sql.Time;
 import java.time.LocalDate;
+import java.util.Scanner;
 
 
 public class Seller implements ISeller {
 
+    public int addNewPerformance(){
+        Scanner s = new Scanner(System.in);
+
+        String nameOfPerformance,description, locetion;
+        System.out.println("please enter name of performance");
+        nameOfPerformance = s.nextLine();
+        description = s.nextLine();
+        locetion = s.nextLine();
+
+        return setNewPerformence(nameOfPerformance, description, hall, date, locetion, lastDateToPurchase, priec);
+    }
+
     @Override
     public int setNewPerformence(String nameOfPerformence,
                                  String description,
-                                 String hallName,
+                                 Hall hall,
                                  LocalDate date,
                                  String location,
                                  LocalDate lastDateToPurchase,
